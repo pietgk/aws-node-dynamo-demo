@@ -12,6 +12,7 @@ exports.putEventHandler = async event => {
     // https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-logging.html
     console.log('received:', JSON.stringify(event));
 
+    // TODO a bit more uncle Bob
     // TODO storage (mongoDb) validator on stage and required event fields http://mongodb.github.io/node-mongodb-native/3.2/tutorials/collections/
     // TODO create indexes when required
     const eventBody = JSON.parse(body);
@@ -25,10 +26,10 @@ exports.putEventHandler = async event => {
             statusCode: 200,
             ...result
         };
-    } catch (e) {
+    } catch (exception) {
         response = {
             statusCode: 500,
-            e
+            exception
         };
     }
     await StorageClose(storage);

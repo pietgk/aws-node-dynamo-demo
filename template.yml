@@ -109,6 +109,58 @@ Resources:
           Properties:
             Path: /
             Method: POST
+
+  # This is a Lambda function config associated with the source code: put-event.js
+  putEventFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: src/handlers/put-event.putEventHandler
+      Runtime: nodejs10.x
+      MemorySize: 128
+      Timeout: 60
+      Description: A simple example includes a HTTP post method to add one event to a MongoDb Atlas collection.
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /
+            Method: POST
+
+  # This is a Lambda function config associated with the source code: currenttempincovilha.js
+  currenttempincovilha:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: src/handlers/currenttempincovilha.getEventHandler
+      Runtime: nodejs10.x
+      MemorySize: 128
+      Timeout: 60
+      Description: A simple example includes a HTTP post method to get event currenttempincovilha from the stage_events MongoDb Atlas collection.
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /
+            Method: GET
+
+  # This is a Lambda function config associated with the source code: avgtempinsfax.js
+  avgtempinsfax:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: src/handlers/avgtempinsfax.getEventHandler
+      Runtime: nodejs10.x
+      MemorySize: 128
+      Timeout: 60
+      Description: A simple example includes a HTTP post method to get event avgtempinsfax from the stage_events MongoDb Atlas collection.
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /
+            Method: GET
+
   # Simple syntax to create a DynamoDB table with a single attribute primary key, more in
   # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesssimpletable
 
