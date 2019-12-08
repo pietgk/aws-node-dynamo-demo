@@ -114,7 +114,7 @@ Resources:
   putEventFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./
+      CodeUri: s3://aws-us-west-2-426406904944-aws-node-dynamo-demo-pipe/dca87404e1d567c218bcfa2c9132b008
       Handler: src/handlers/put-event.putEventHandler
       Runtime: nodejs10.x
       MemorySize: 128
@@ -131,7 +131,7 @@ Resources:
   currenttempincovilha:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./
+      CodeUri: s3://aws-us-west-2-426406904944-aws-node-dynamo-demo-pipe/dca87404e1d567c218bcfa2c9132b008
       Handler: src/handlers/currenttempincovilha.getEventHandler
       Runtime: nodejs10.x
       MemorySize: 128
@@ -148,7 +148,7 @@ Resources:
   avgtempinsfax:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./
+      CodeUri: s3://aws-us-west-2-426406904944-aws-node-dynamo-demo-pipe/dca87404e1d567c218bcfa2c9132b008
       Handler: src/handlers/avgtempinsfax.getEventHandler
       Runtime: nodejs10.x
       MemorySize: 128
