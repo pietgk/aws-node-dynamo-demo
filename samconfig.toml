@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "aws-node-dynamo-demo"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-c0ey6iyz5isv"
+s3_prefix = "aws-node-dynamo-demo"
+region = "us-west-2"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "AppId="

@@ -14,7 +14,7 @@ exports.storageGetEvent = async event => {
         let result = await findOne(events, { _id });
         response = {
             statusCode: 200,
-            result: JSON.stringify(result)
+            body: JSON.stringify(result)
         };
     } catch (exception) {
         response = {
